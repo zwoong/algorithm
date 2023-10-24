@@ -7,30 +7,30 @@ M : 숫자가 더해지는 총 횟수
 K : 특정 인덱스가 최대 연속해서 더할 수 있는 수
 """
 
-# # 단순하게 푸는 답안 예시
-# # N, M, K를 공백으로 구분하여 입력받기
-# n, m, k = map(int, input().split())
-# # N개의 수를 공백으로 구분하여 입력받기
-# data = list(map(int, input().split()))
+# 단순하게 푸는 답안 예시
+# N, M, K를 공백으로 구분하여 입력받기
+n, m, k = map(int, input().split())
+# N개의 수를 공백으로 구분하여 입력받기
+data = list(map(int, input().split()))
 
-# data.sort() # 입력 받은 수들 정렬하기
-# first = data[n - 1] # 가장 큰 수
-# second = data[n - 2] # 두 번쨰로 큰 수
+data.sort() # 입력 받은 수들 정렬하기
+first = data[n - 1] # 가장 큰 수
+second = data[n - 2] # 두 번쨰로 큰 수
 
-# result = 0 # 초기값
+result = 0 # 초기값
 
-# while True:
-#     for i in range(k): # 가장 큰 수를 K번 더하기
-#         if m == 0: # m이 0이라면 반복문 탈출
-#             break
-#         result += first # 제일 큰 수를 result에 더하기
-#         m -=1 # 더할 때마다 1씩 빼기
-#     if m == 0: # m이 0이라면 반복문 탈출
-#         break
-#     result += second # 두 번쨰로 큰 수 더하기
-#     m -= 1 # 더할 때마다 1씩 빼기
+while True:
+    for i in range(k): # 가장 큰 수를 K번 더하기
+        if m == 0: # m이 0이라면 반복문 탈출
+            break
+        result += first # 제일 큰 수를 result에 더하기
+        m -=1 # 더할 때마다 1씩 빼기
+    if m == 0: # m이 0이라면 반복문 탈출
+        break
+    result += second # 두 번쨰로 큰 수 더하기
+    m -= 1 # 더할 때마다 1씩 빼기
 
-# print(result)
+print(result)
 
 """
 위 풀이는 M이 10,000 이하이므로 이 방식으로도 문제를 해결할 수 있지만, M의 크기가 100억 이상처럼 커진다면
@@ -53,7 +53,6 @@ int(M / (K + 1)) * K + M % (K + 1)
 """
 
 # 답안 예시
-
 n, m, k = map(int, input().split())
 data = list(map(int, input().split()))
 
