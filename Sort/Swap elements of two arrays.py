@@ -33,3 +33,4 @@ for i in range(k):
         break
     
 print(sum(a)) # 배열 A의 모든 원소의 합을 출력
+
